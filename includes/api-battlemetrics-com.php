@@ -34,7 +34,7 @@ $bm_activeplayers2 = $data2["players"];
 $bm_maxplayers2 = $data2["maxPlayers"];
 $bm_address2 = $data2["ip"];
 $bm_port2 = $data2["port"];
-$bm_country1 = $data2["country"];
+$bm_country2 = $data2["country"];
 // END SERVER BLOCK #2
 
 // START SERVER BLOCK #3
@@ -53,7 +53,7 @@ $bm_activeplayers3 = $data3["players"];
 $bm_maxplayers3 = $data3["maxPlayers"];
 $bm_address3 = $data3["ip"];
 $bm_port3 = $data3["port"];
-$bm_country1 = $data3["country"];
+$bm_country3 = $data3["country"];
 // END SERVER BLOCK #3
 
 ?>
