@@ -2,6 +2,40 @@
 <?php if(API_BattleMetrics_com == "ON"){include_once("includes/api-battlemetrics-com.php");};?>
 <!-- END Include/Get variables from API -->
 
+<!-- START Check server status if its up or down -->
+<?php
+function bm_status1() {
+  global $bm_status1;
+  if ($bm_status1=="online") {
+    echo '<span class="badge badge-success">UP!</span>';
+  }
+  else{
+    echo '<span class="badge badge-danger">Down</span>';
+  }
+}
+
+function bm_status2() {
+  global $bm_status2;
+    if ($bm_status2=="online") {
+      echo '<span class="badge badge-success">UP!</span>';
+    }
+    else{
+      echo '<span class="badge badge-danger">Down</span>';
+    }
+  }
+
+  function bm_status3() {
+    global $bm_status3;
+    if ($bm_status3=='online') {
+      echo '<span class="badge badge-success">UP!</span>';
+    }
+    else{
+      echo '<span class="badge badge-danger">Down</span>';
+    }
+  }
+?>
+<!-- END Check server status if its up or down -->
+
 <!-- START Create table / Server list -->
 
 <table class="table table-responsive-lg">
@@ -21,7 +55,7 @@
       <th scope="row"><?php echo $bm_name1?></th>
       <td><button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#Server1"><i class="fab fa-steam-symbol"></i> Steam Connect</button></td>
       <td><img src="../images/rust-32x32.png" width="20" height="20" title="Rust" alt="Rust" /><?php echo " Rust"?></td>
-      <td><?php echo $bm_status1?></td>
+      <td><?php bm_status1(); ?></td>
       <td><?php echo $bm_activeplayers1?>/<?php echo $bm_maxplayers1?></td>
       <td><?php echo $bm_uptime1?>/sec</td>
       <td><?php echo $bm_location1?></td>
@@ -30,7 +64,7 @@
     <th scope="row"><?php echo $bm_name2?></th>
       <td><button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#Server2"><i class="fab fa-steam-symbol"></i> Steam Connect</button></td>
       <td><img src="../images/csgo.452e5.png" width="20" height="20" title="CS GO" alt="CS GO" /><?php echo " CS GO"?></td>
-      <td><?php echo $bm_status2 ?></td>
+      <td><?php bm_status2(); ?></td>
       <td><?php echo $bm_activeplayers2?>/<?php echo $bm_maxplayers2?></td>
       <td><?php echo $bm_uptime2?>/sec</td>
       <td><?php echo $bm_location2?></td>
@@ -39,7 +73,7 @@
     <th scope="row"><?php echo $bm_name3?></th>
       <td><button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#Server3"><i class="fab fa-steam-symbol"></i> Steam Connect</button></td>
       <td><img src="../images/arma-3.jpg" width="20" height="20" title="Arma3" alt="Arma3" /><?php echo " Arma 3"?></td>
-      <td><?php echo $bm_status3?></td>
+      <td><?php bm_status3(); ?></td>
       <td><?php echo $bm_activeplayers3?>/<?php echo $bm_maxplayers3?></td>
       <td><?php echo $bm_uptime3?>/sec</td>
       <td><?php echo $bm_location3?></td>
